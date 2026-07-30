@@ -2,6 +2,8 @@
 
 An interactive resume builder that analyzes a pasted job description, scores resume readiness, highlights matched and missing ATS keywords, and generates a truthful tailored resume preview.
 
+Live app: https://ats-resume-job-copilot.netlify.app
+
 ## Features
 
 - Job description keyword extraction and ATS readiness scoring
