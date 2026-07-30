@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f6ef;
+  --foreground: #18211d;
+  --panel: #fffdf7;
+  --line: #d9d6c8;
+  --accent: #0f766e;
+  --accent-strong: #115e59;
+  --violet: #6d28d9;
+  --gold: #b45309;
+  --rose: #be123c;
+  --ink-soft: #53615a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea,
+input {
+  min-width: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 247, 0.92), rgba(247, 246, 239, 0.98)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(15, 118, 110, 0.06) 0,
+      rgba(15, 118, 110, 0.06) 1px,
+      transparent 1px,
+      transparent 72px
+    );
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 247, 0.92);
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(24, 33, 29, 0.08);
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #c9c5b8;
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--foreground);
+  padding: 0.72rem 0.78rem;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.field:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.16);
+}
+
+.field-label {
+  color: #3f4b45;
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.action-button {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  display: inline-flex;
+  font-weight: 800;
+  gap: 0.45rem;
+  justify-content: center;
+  min-height: 2.55rem;
+  padding: 0.62rem 0.88rem;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+}
+
+.action-button:focus-visible {
+  outline: 3px solid rgba(15, 118, 110, 0.24);
+  outline-offset: 2px;
+}
+
+.action-primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(15, 118, 110, 0.2);
+}
+
+.action-secondary {
+  background: #ffffff;
+  border-color: #c9c5b8;
+  color: #18211d;
+}
+
+.action-warm {
+  background: #fff4e6;
+  border-color: #f2cf9f;
+  color: #7c2d12;
+}
+
+.metric {
+  border-left: 4px solid var(--accent);
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+}
+
+.metric:nth-child(2) {
+  border-left-color: var(--violet);
+}
+
+.metric:nth-child(3) {
+  border-left-color: var(--gold);
+}
+
+.metric:nth-child(4) {
+  border-left-color: var(--rose);
+}
+
+.keyword-chip {
+  align-items: center;
+  border: 1px solid #d8d2bd;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 700;
+  gap: 0.35rem;
+  padding: 0.34rem 0.62rem;
+}
+
+.keyword-chip.good {
+  background: #e9f7f4;
+  border-color: #aadbd2;
+  color: #115e59;
+}
+
+.keyword-chip.missing {
+  background: #fff7ed;
+  border-color: #fed7aa;
+  color: #9a3412;
+}
+
+.resume-page {
+  background: #ffffff;
+  border: 1px solid #d8d2bd;
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(24, 33, 29, 0.11);
+  color: #161a18;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.42;
+  min-height: 760px;
+  padding: clamp(1.2rem, 2.2vw, 2.2rem);
+}
+
+.resume-page h2,
+.resume-page h3 {
+  letter-spacing: 0;
+}
+
+.resume-page h2 {
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.resume-page h3 {
+  border-bottom: 1px solid #bdb7a6;
+  font-size: 0.78rem;
+  font-weight: 900;
+  margin: 1rem 0 0.45rem;
+  padding-bottom: 0.22rem;
+  text-transform: uppercase;
+}
+
+.resume-page p,
+.resume-page li {
+  font-size: 0.92rem;
+}
+
+.resume-page ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.05rem;
+}
+
+.resume-template-compact {
+  font-size: 0.94rem;
+  padding: clamp(1rem, 1.8vw, 1.6rem);
+}
+
+.resume-template-technical h3 {
+  color: #115e59;
+}
+
+.resume-template-executive h2 {
+  color: #4c1d95;
+}
+
+.resume-template-classic h3 {
+  color: #18211d;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .app-shell {
+    background: #ffffff;
+    min-height: auto;
+  }
+
+  .print-area {
+    display: block !important;
+  }
+
+  .resume-page {
+    border: none;
+    box-shadow: none;
+    min-height: auto;
+    padding: 0;
+  }
+}
